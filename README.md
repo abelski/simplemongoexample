@@ -1,0 +1,4 @@
+simplemongoexample
+==================
+
+simple mongo example
