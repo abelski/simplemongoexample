@@ -1,11 +1,23 @@
-package by.abelski.example;
+package by.abelski.domain;
 
 import com.mongodb.BasicDBObject;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
+ * Simple pojo for example
+ *
+ * @see by.abelski.RunnerUsingSpringData use anotations
+ * @see by.abelski.RunnerWithDriver use getMongoObject for serialization. work but not cool
+ *
  * @author abelski
  */
+@Document(collection = "User")
 public class User {
+    @Id
+    public String id;
+    private Long version;
+
     String name;
     Sex sex;
 

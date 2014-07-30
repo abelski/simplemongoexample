@@ -1,5 +1,7 @@
-package by.abelski.example;
+package by.abelski;
 
+import by.abelski.domain.Sex;
+import by.abelski.domain.User;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
@@ -15,7 +17,7 @@ import java.util.List;
  * @author artyr
  * @see /www.mkyong.com/mongodb/java-mongodb-hello-world-example/
  */
-public class App {
+public class RunnerWithDriver {
     public static void main(String[] args) {
         try {
             final MongoClient mongo = new MongoClient("localhost", 27017);
@@ -25,10 +27,10 @@ public class App {
 
             System.out.println("size="+size);
             final User bob = new User("BOB", Sex.MALE);
-            List<DBObject> dbObjects = new ArrayList<DBObject>(10000000);
+            List<DBObject> dbObjects = new ArrayList<DBObject>(10);
 
             System.out.println("Date()=" + new Date());
-            for (int i = 0; i < 10000000; i++) {
+            for (int i = 0; i < 10; i++) {
                 dbObjects.add(bob.getMongoObject());
             }
             System.out.println("start inserting ");

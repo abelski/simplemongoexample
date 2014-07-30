@@ -1,4 +1,4 @@
-package by.abelski.example;
+package by.abelski.domain;
 
 /**
  * @author abelski
